@@ -60,8 +60,8 @@ namespace LoginScreen
             }
             else
             {
-//                MessageBox.Show("로그인실패~", "로그인",
-//MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //                MessageBox.Show("로그인실패~", "로그인",
+                //MessageBoxButtons.OK, MessageBoxIcon.Error);
                 lblErrorMsg.Visible = true;
 
             }
@@ -83,6 +83,29 @@ namespace LoginScreen
                 e.SuppressKeyPress = true; // 기본비프음방지
                 btnLogin.PerformClick(); // 버튼이눌린것처럼만들기
             }
+        }
+
+        private void cbxShowPW_CheckedChanged(object sender, EventArgs e)
+        {
+            // 체크박스의체크상태에따라패스워드보이기/숨기기
+            if (cbxShowPW.Checked)
+            {
+                txtPW.UseSystemPasswordChar =false;
+            }
+            else
+            {
+                txtPW.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtID.Text = "아이디";
+            txtID.ForeColor = Color.Silver;
+            txtPW.Text = "패스워드";
+            txtPW.ForeColor = Color.Silver;
+            cbxShowPW.Checked = false;
+            txtPW.UseSystemPasswordChar = false;
         }
     }
 }
