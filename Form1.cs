@@ -9,10 +9,6 @@ namespace LoginScreen
         {
             InitializeComponent();
         }
-        private void btn_login_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void txtID_Enter(object sender, EventArgs e)
         {
@@ -59,12 +55,14 @@ namespace LoginScreen
 
             if (inputID == myID && inputPW == myPW)
             {
+                lblErrorMsg.Visible = false;
                 MessageBox.Show("로그인성공!");
             }
             else
             {
-                MessageBox.Show("로그인실패~", "로그인",
-MessageBoxButtons.OK, MessageBoxIcon.Error);
+//                MessageBox.Show("로그인실패~", "로그인",
+//MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lblErrorMsg.Visible = true;
 
             }
         }
